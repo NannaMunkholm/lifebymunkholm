@@ -1,0 +1,20 @@
+version: 2
+jobs:
+    build:
+        docker:
+            - image: circleci/node
+        working_directory: ~/guidelinesbymunkholm
+        steps:
+            - checkout
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "guidelinesbymunkholm/package.json" }}
+                      - v1-dependencies-
+            - run: cd wishlist && npm ci
+            - run: cd wishlist && npm run lint
+            - run: cd wishlist && npm run build
+            - run: cd wishlist && ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+            - save_cache:
+                  paths:
+                      - node_modules
+                  key: v1-dependencies-{{ checksum "guidelinesbymunkholm/package.json" }}
