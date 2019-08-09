@@ -10,10 +10,10 @@ jobs:
                   keys:
                       - v1-dependencies-{{ checksum "guidelinesbymunkholm/package.json" }}
                       - v1-dependencies-
-            - run: cd wishlist && npm ci
-            - run: cd wishlist && npm run lint
-            - run: cd wishlist && npm run build
-            - run: cd wishlist && ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+            - run: cd guidelinesbymunkholm && npm ci
+            - run: cd guidelinesbymunkholm && npm run lint
+            - run: cd guidelinesbymunkholm && npm run build
+            - run: cd guidelinesbymunkholm && ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
             - save_cache:
                   paths:
                       - node_modules
