@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/circlefire",
+    "public": "dist/guidelinesbymunkholm",
     "ignore": [
       "firebase.json",
       "**/.*",
