@@ -1,0 +1,43 @@
+<head>
+  <title>Guidelines</title>
+</head>
+
+<body>
+  <header>
+    <h1>Guidelines for programming</h1>
+    <a routerLink="/guidelines/css">CSS</a>
+  </header>
+
+  <main>
+    
+    <p>
+      This site contains guidelines for how a website is build.
+      It is made as a dictonary for myself, so I can keep all guides in one place. 
+    </p>
+
+    <h2>Templating - Structure your site</h2>
+    <h3>Setup the main folders</h3>
+    <p>
+      1. Create a new page/folder write "ng g c name of folder" <br>
+      2. Add the new page to app.routing.modules.ts <br>
+      3. Insert:<br>
+    </p>
+    <pre class="line-numbers">
+        <code>
+            import DictionaryComponent from './dictionary/dictionary.component'
+            path: 'dictionary', component: DictionaryComponent
+        </code>
+    </pre>
+    <p>
+      Create a new page within the folder, insert in the terminal: <br>
+      "ng g c name of folder/name of new page"
+    </p>
+
+    <h3>Setup navigation between sites</h3>
+    <h2>Styling - Style your site</h2>
+    <p>
+      Main CSS syntax: <br>
+      selector &#123; property : value; property : value 	&#125;
+    </p>
+  </main>
+</body>
