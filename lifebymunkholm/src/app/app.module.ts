@@ -9,6 +9,7 @@ import { GuidelinesComponent } from './guidelines/guidelines.component';
 import { CssComponent } from './guidelines/css/css.component';
 import { DictionaryComponent } from './dictionary/dictionary.component';
 import { ToolsComponent } from './tools/tools.component';
+import { HostingComponent } from './guidelines/hosting/hosting.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ToolsComponent } from './tools/tools.component';
     GuidelinesComponent,
     CssComponent,
     DictionaryComponent,
-    ToolsComponent
+    ToolsComponent,
+    HostingComponent
   ],
   imports: [
     BrowserModule,

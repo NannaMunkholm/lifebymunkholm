@@ -1,0 +1,66 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="How to set up hosting with firebase">
+    <meta name="keywords" content="Hosting, angular, firebase, circleci, github">
+    <meta name="author" content="Nanna Bach Munkholm">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <h1>Guide for setting up hosting</h1>
+    </header>
+
+    <main>
+        <div>
+        <h1>Welcome to DevOps!</h1>
+        <p>Let's setup a continuous deployment pipeline!</p>
+        </div>
+        
+        <h2>Setting up</h2>
+        <p>Create GitHub account and a repository for your project</p>
+        <p>Clone or download <a href="https://github.com/bjornnorgaard/orbit">github.com/bjornnorgaard/orbit</a></p>
+        <p>Copy and paste the folder 'circlefire', into your own project</p>
+        
+        <h2>Deploy to Hosting</h2>
+        <p>Sign into <a href="https://firebase.google.com/">firebase.google.com</a></p>
+        <p>Create firebase project. The project id will be your unique URL</p>
+        <p>Go to the Develop > Hosting > Get Started</p>
+        <p>Follow setup dialog for hosting using powershell, choosing</p>
+        
+        <li>Default Project: self-explanatory</li>
+        <li>Public directory: dist/circlefire</li>
+        <li>Configure as SPA: YES</li>
+        
+        <p>Update package.json scripts with these</p>
+        
+        <div class="code">
+        <p>"build": "ng build --prod",</p>
+        <p>"deploy": "ng build && firebase deploy",</p>
+        </div>
+        
+        <p>Deploy the app using your new command</p>
+        
+        <p class="code">npm run deploy</p>
+        
+        <p>Now the app should be available to the internet!</p>
+        
+        <h2>Automate deployment</h2>
+        <p>Sign into <a href="https://circleci.com">circleci.com</a> using github login</p>
+        <p>Add your github project and follow guide for Linux/Node</p>
+        <p>
+        Copy config.yml content from
+        <a href="https://raw.githubusercontent.com/bjornnorgaard/orbit/master/.circleci/config.yml">here</a>
+        </p>
+        <p>Install firebase tools as a devDependency</p>
+        <p class="code">npm i --save-dev firebase-tools</p>
+        <p>Get a firebase access token for the circleci to use</p>
+        <p class="code">firebase login:ci</p>
+        <p>Add this token to your circleci environment as FIREBASE_TOKEN</p>
+        <br />
+        <h2>Push new commit and behold!</h2>
+        <br />
+        
+        <p>If an error of "Repository not found" appears write the following in the command line: git remote set-url origin git@github.com:NannaMunkholm/lifebymunkholm.git</p>
+    </main>
+</body>
