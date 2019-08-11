@@ -2,7 +2,7 @@ version: 2
 jobs:
     build:
         docker:
-            - image: lifebymunkholm/node
+            - image: circleci/node
         working_directory: ~/guidelinesbymunkholm
         steps:
             - checkout
