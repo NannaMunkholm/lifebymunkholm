@@ -1,0 +1,19 @@
+#box1 {
+    margin: 20px;
+    padding: 10px;
+    border:5px solid black;
+    width: 200px;
+    height: 200px;
+    text-align: justify;
+    float: left;
+}
+
+#box2 {
+    margin: 20px;
+    padding: 50px;
+    border:5px solid black;
+    width: 200px;
+    height: 200px;
+    text-align: justify;
+    float: left;
+}
